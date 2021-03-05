@@ -5,8 +5,9 @@ import numpy as np
 class Customer:
     ''' A single customer that moves through the supermarket in a MCMC simulation'''
     
-    def __init__(self, name, state, budget=100):
+    def __init__(self, c_id, name, state, budget=100):
         transition_matrix = pd.read_csv("data/transition_matrix.csv", index_col=0)
+        self.c_id = c_id
         self.name = name
         self.state = state
         self.budget = budget
